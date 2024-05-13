@@ -1,0 +1,39 @@
+<div class="container main-div">
+    <div class="row justify-content-center ">
+        <h1 class="text-center">My Profile</h1>
+        <div class="col-md-6 offset-md-3 profile-detail" *ngIf="userData.length==0">
+            <h2 style="text-align: center;">Data Not Found</h2>
+        </div>
+
+        <div class="col-md-6 offset-md-3 profile-detail">
+            <div class="row">
+                <h2 class="col-sm-4">Name:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.name}}</h2>
+            </div>
+            <div class="row">
+                <h2 class="col-sm-4">Age:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.age}}</h2>
+            </div>
+            <div class="row">
+                <h2 class="col-sm-4">Designation:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.designation }}</h2>
+            </div>
+            <div class="row">
+                <h2 class="col-sm-4">Phone:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.phone }}</h2>
+            </div>
+            <div class="row">
+                <h2 class="col-sm-4">Employee ID:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.employee_id }}</h2>
+            </div>
+            <div class="row">
+                <h2 class="col-sm-4">Email:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.email }}</h2>
+            </div>
+            <div class="row">
+                <h2 class="col-sm-4">Address:</h2>
+                <h2 class="col-sm-8" style="font-weight: 400;">{{userData[0]?.address }}</h2>
+            </div>
+        </div>
+    </div>
+</div>

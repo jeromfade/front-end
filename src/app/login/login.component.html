@@ -1,0 +1,33 @@
+<!-- login.component.html -->
+<div class="container d-flex justify-content-center">
+  <div class="col-md-6">
+    <div class="card mt-5">
+      <div class="card-header">
+        <h3>Login</h3>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit($event)" #loginForm="ngForm">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required email #emailModel="ngModel">
+            <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="text-danger">
+              <div *ngIf="emailModel.errors?.['required']">Email is required.</div>
+              <!-- <div *ngIf="emailModel.errors?.['email']">Please enter a valid email.</div> -->
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required pattern="^(?=.*\d)(?=.*[a-z]).{6,}$"  minlength="6" #passwordModel="ngModel">
+            <div *ngIf="passwordModel.invalid && (passwordModel.dirty || passwordModel.touched)" class="text-danger">
+              <div *ngIf="passwordModel.errors?.['required']">Password is required.</div>
+              <div *ngIf="passwordModel.errors?.['minlength']">Password must be at least 6 characters long.</div>
+              <div *ngIf="passwordModel.errors?.['pattern']">Password with Capital Small Number.</div>
+
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary submit-btn" [disabled]="loginForm.invalid">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

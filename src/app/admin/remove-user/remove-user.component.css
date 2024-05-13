@@ -1,0 +1,21 @@
+.main-box {
+    width: 400px;
+    height: 250px;
+}
+
+h1 {
+    text-align: center;
+    padding: 10px;
+}
+h2{
+  text-align: center;
+}
+
+.footer-deletion-div {
+    float: right;
+}
+
+button{
+    margin-right: 5px;
+    margin-top: 30px;
+}

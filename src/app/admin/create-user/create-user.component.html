@@ -1,0 +1,65 @@
+<div class="dialog-box">
+    <div class="child-box">
+        <h1>{{ data.title }}</h1>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="name" required name #nameModel="ngModel">
+                <div *ngIf="nameModel.invalid && (nameModel.dirty || nameModel.touched)" class="text-danger">
+                    <div *ngIf="nameModel.errors?.['required']">Name is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="employeeId">Employee Id</label>
+                <input type="employeeId" class="form-control" id="employeeId" [(ngModel)]="employeeId" required employeeId
+                    #employeeIdModel="ngModel">
+                <div *ngIf="employeeIdModel.invalid && (employeeIdModel.dirty || employeeIdModel.touched)" class="text-danger">
+                    <div *ngIf="employeeIdModel.errors?.['required']">Employee Id is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" required email #emailModel="ngModel">
+                <div *ngIf="emailModel.invalid && (emailModel.dirty || emailModel.touched)" class="text-danger">
+                  <div *ngIf="emailModel.errors?.['required']">Email is required.</div>
+                  <div *ngIf="emailModel.errors?.['email']">Please enter a valid email.</div>
+                </div>
+              </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" id="age" [(ngModel)]="age" required age #ageModel="ngModel">
+                <div *ngIf="ageModel.invalid && (ageModel.dirty || ageModel.touched)" class="text-danger">
+                    <div *ngIf="ageModel.errors?.['required']">Age is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="designation" [(ngModel)]="designation" required designation #designationModel="ngModel">
+                <div *ngIf="designationModel.invalid && (designationModel.dirty || designationModel.touched)" class="text-danger">
+                    <div *ngIf="designationModel.errors?.['required']">Designation is required.</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone" [(ngModel)]="phone" required pattern="^\d{10}$" phone #phoneModel="ngModel">
+                <div *ngIf="phoneModel.invalid && (phoneModel.dirty || phoneModel.touched)" class="text-danger">
+                    <div *ngIf="phoneModel.errors?.['required']">Phone Number is required.</div>
+              <div *ngIf="phoneModel.errors?.['pattern']">Enter Valid Phone Number.</div>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea type="text" class="form-control" id="address" [(ngModel)]="address" name="address" #addressModel="ngModel" maxlength="100" required></textarea>
+                <div *ngIf="addressModel.invalid && (addressModel.dirty || addressModel.touched)" class="text-danger">
+                  <div *ngIf="addressModel.errors?.['required']">Address is required.</div>
+                  <div *ngIf="addressModel.errors?.['maxlength']">Address cannot exceed 100 characters.</div>
+                </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="onNoClick()">Cancel</button>
+            <button type="button" class="btn btn-primary" (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>
